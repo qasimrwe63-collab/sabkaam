@@ -1,0 +1,7 @@
+sabkaam.db
+sabkaam_backup.py
+venv/
+__pycache__/
+*.pyc
+private_provider_uploads/
+.env
