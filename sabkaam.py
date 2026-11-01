@@ -9,6 +9,8 @@ from werkzeug.utils import secure_filename
 from markupsafe import escape
 
 app = Flask(__name__)
+app.config["SERVER_NAME"] = None
+app.config["PREFERRED_URL_SCHEME"] = "https"
 app.secret_key = os.environ.get("SABKAAM_SECRET", secrets.token_hex(32))
 DB = "sabkaam.db"
 ADMIN_USERNAME = "Qasimzulfiqar123"
@@ -1482,4 +1484,4 @@ def admin_backup():
 init_db()
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5000, debug=False)
+    app.run(host="0.0.0.0", port=5000, debug=False)
